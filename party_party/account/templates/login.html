@@ -135,6 +135,10 @@
 </style>
 
 <body>
+    {% extends 'base.html' %}
+
+    {% block container %}
+
     <div class="box">
         <div class="container">
             <div class="logo">
@@ -159,6 +163,8 @@
             </button>
         </div>
     </div>
+    
+    {% endblock %}
 </body>
 
 </html>
