@@ -1,0 +1,32 @@
+.name_info {
+    font-size: 5em;
+}
+
+a:link {
+    color: red;
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+body {
+    background-color: #E0F8F7;
+}
+
+.divback {
+    background-color: white;
+
+}
+
+.buttoncol {
+    background-color: #2691d9;
+
+}
