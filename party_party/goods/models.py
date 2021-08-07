@@ -38,7 +38,7 @@ class SemiGoods(models.Model):
 
     product = models.CharField(max_length = 20)
     product_image = models.ImageField()
-    writer = models.ForeignKey(User, on_delete = CASCADE, related_name = "regist")
+    writer = models.ForeignKey(User, on_delete = CASCADE, related_name = "semiregist")
     semi_price = models.IntegerField()
     semi_count = models.IntegerField()
     item = models.CharField(max_length=80, choices=ITEM_CHOICES)
