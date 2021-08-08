@@ -63,6 +63,14 @@ header .login {
   width: 120px;
 }
 
+header .myaccount{
+  grid-area : login;
+  border-radius: 50%;
+  margin : 16px 3px 16px 80px;
+  width : 30px;
+  height : 30px;
+}
+
 header .menu {
   grid-area: menu;
   margin: 20px 10px;
