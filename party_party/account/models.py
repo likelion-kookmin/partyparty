@@ -5,10 +5,8 @@ from django.contrib.auth.models import AbstractUser
 
 
 class UserModel(AbstractUser):
-    USER_POS = (
-        ('전문가', '전문가'),
-        ('일반', '일반'),
-    )
+    
     nickname = models.CharField(max_length=100)
-    position = models.CharField(
-        max_length=10, choices=USER_POS, help_text='전문가인지 일반유저인지 선택해주세요!')
+    phone_num = models.CharField(max_length=50)
+    profile_img = models.ImageField(default ="../static/account_standard.jpg",blank=True, null=True, upload_to ="accounts/")
+    
