@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block container %}
 {% load static %}
+<<<<<<< Updated upstream
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,3 +26,32 @@
 
 {% endblock %}
 
+=======
+
+<head>
+    <title>Party Party</title>
+    <link rel="Stylesheet" href="{% static 'write_choices.css' %}">
+
+</head>
+<main>
+    <section>~배너~</section>
+    <section>
+        <div class="section_title">마감임박! 오늘 마감 입금폼</div>
+        <div></div>
+        <div class="section_title">마감임박! 오늘 마감 수요조사폼</div>
+        <div></div>
+        <div class="section_title">현재 진행 중인 수요조사폼</div>
+        <div></div>
+        <div class="section_title">현재 진행 중인 입금폼</div>
+        <div></div>
+    </section>
+
+    <a href="{% url 'write_choices' %}" class="btn btn-primary buttoncol">
+        <span style='color:black'>
+            Press button</span>
+
+</main>
+
+
+{% endblock %}
+>>>>>>> Stashed changes

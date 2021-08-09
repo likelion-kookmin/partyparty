@@ -7,14 +7,22 @@ header {
   position: fixed;
   width: 100%;
   height: 60px;
+<<<<<<< Updated upstream
   
+=======
+>>>>>>> Stashed changes
   display: grid;
   grid-template-columns: 200px 145px 20px 1fr 20px 140px 45px 50px;
   grid-template-areas: "logo search icon_img space1 profile login menu space2";
   z-index: 1;
+<<<<<<< Updated upstream
 
   /*border: 1px solid pink;
   padding-top : 10px;*/
+=======
+  color:rgb(54, 54, 54);
+  background-color: palegreen;
+>>>>>>> Stashed changes
 }
 
 header .logo {

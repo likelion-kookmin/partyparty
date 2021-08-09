@@ -4,6 +4,9 @@ from django.contrib.auth import get_user_model
 from django.db.models.deletion import CASCADE
 from django.db.models.fields import IntegerField
 
+User = get_user_model()
+
+
 ITEM_CHOICES= {
       ('2D','2D'), #오른쪽에 있는 것이 화면에 보인다.
       ('people', '실존인물'),
