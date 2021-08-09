@@ -10,9 +10,9 @@ class semigoodsForm(forms.Form):
     
     semi_price = models.IntegerField(error_messages = {'required':"예상가격을 입력해주세요"}, label = "price")
     semi_count = models.IntegerField(error_messages = {'required':"예상수량을 입력해주세요"}, label = "count")
-    tag = models.CharField(error_messages = {'required':"상품 분류를 선택해주세요"}, label = "tag",max_length=80, choices=ITEM_CHOICES)
+    tag = models.CharField(error_messages = {'required':"상품 분류를 선택해주세요"}, label = "tag",max_length=80)
 
-    email=models.EmailField(null=True,max_length = 200)
+    email=models.EmailField(help_text='이메일을 입력해주세요(선택)',null=True,max_length = 200)
     twitter=models.CharField(error_messages = {'required':"트위터 계정을을 입력해주세요"}, label = "twitter",max_length=20)
     information_needs = models.CharField(error_messages = {'required':"상품 설명을 입력해주세요"}, label = "info",max_length=500)
     

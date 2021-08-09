@@ -50,7 +50,7 @@ class SemiGoods(models.Model):
     writer = models.ForeignKey(User, on_delete = CASCADE, related_name = "semiregist")
     semi_price = models.IntegerField()
     semi_count = models.IntegerField()
-    tag = models.CharField(max_length=80, choices=ITEM_CHOICES)
+    tag = models.CharField(max_length=80,null = True)
 
     email=models.EmailField(null=True,max_length = 200)
     twitter=models.CharField(max_length=20)

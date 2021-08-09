@@ -4,4 +4,6 @@ main {
     height: 100vh;
     margin: 0 auto;
     padding-top: 60px;
+    border-width: 10vh;
+    border-color: black;
 }

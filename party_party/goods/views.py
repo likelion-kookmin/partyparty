@@ -49,7 +49,7 @@ def create_semi(request):
         new_semigoods.email=request.POST['email']
         new_semigoods.twitter=request.POST['twitter']
         
-
+        new_semigoods.information_needs=request.POST['information']
         
             
         new_semigoods.save()
