@@ -12,18 +12,30 @@
     <title>write-choices</title>
 </head>
 
-<body>
+<script>
+    function chk() {
+        if (document.getElementById("title").value == "" || document.getElementById("body").value == "") {
+            alert("내용을 입력해주세요");
+            return false;
+        }
+        else
+            document.search.submit();
+    }
+</script>
+</head>
 
-    <h2>수요조사폼 작성하기</h2>
+<body>
+    <br><br>
+    <section><h2>수요조사폼 작성하기</h2></section>
     <div>
-        <form method="POST" action="{% url 'create' %}" enctype="multipart/form-data">
+        <form method="POST" action="{% url 'create_semi' %}" enctype="multipart/form-data">
             {% csrf_token %}
             <input type="text" name="title">
             <input type="text" name="content">
             <input type="file" name="imgs" multiple>
             <input type="submit" value="작성하기">
         </form>
-        <form action="{%url 'create'%}" method="POST" enctype="multipart/form-data" onsubmit="return chk();">
+        <form action="{%url 'create_semi'%}" method="POST" enctype="multipart/form-data" onsubmit="return chk();">
             {%csrf_token%}
             <div>
                 <input type="text" name="title" id="title" placeholder="제목을 입력하세요."

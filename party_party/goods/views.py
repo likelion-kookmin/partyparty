@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from .models import Goods, SemiGoods
+from django.shortcuts import render, get_object_or_404, redirect
+from django.utils import timezone
+from .models import Goods, SemiGoods,Like,semiLike
 
 def goods_detail(request) :
     goods = Goods.object.all()
@@ -9,18 +10,56 @@ def goods_detail(request) :
 def write_choices(request):
     return render(request, 'write_choices.html')
 
-def semigoods_choices(request):
-    return render(request,"semigoods_choices.html")
 def semi_goods(request) : #수요조사폼이 글작성
-    semigoods=SemiGoods.object.all()
     return render(request, 'write_semigoods.html')
 
+
+def semiproduct(request, semi_goods_id):
+    new_semigoods = SemiGoods.objects.get(id = semi_goods_id)
+    try:
+        liked =  new_semigoods.like.filter(user = request.user).exists()
+    except:
+        liked = False
+    total_likes = new_semigoods.like.all()
+    count = 0
+    for l in total_likes:
+        count +=1
+    return render(request, "goods_detail.html")
+
+
+def create_semi(request):
+    #if not request.session.get('user'):
+
+    #return redirect('/users/login')
+
+
+    if(request.method == 'POST'):
+        new_semigoods=SemiGoods()
+
+        new_semigoods.product = request.POST['product']
+        new_semigoods.image = request.FILES['product_imgs']
+        new_semigoods.price=request.POST['semi_price']
+        new_semigoods.count=request.POST['semi_count'] 
+        new_semigoods.tag = request.POST['tag']
+
+
+        new_semigoods.writer = request.user
+        new_semigoods.pud_date = timezone.now()
+
+        new_semigoods.email=request.POST['email']
+        new_semigoods.twitter=request.POST['twitter']
+        
+
+        
+            
+        new_semigoods.save()
+    return redirect('semiproduct', new_semigoods.id)
 
 def goods(request): #입금폼 작성
     goods = Goods.object.all()
     return render(request, 'write_goods.html')
 
-def create_semi(request):
+def create(request):
     if(request.method == 'POST'):
         new_idea.product = request.POST['title']
         new_idea.writer = request.user
