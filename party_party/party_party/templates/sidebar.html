@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -5,14 +9,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap" rel="stylesheet">
     <link href='http://www.openhiun.com/hangul/nanumbarungothic.css' rel='stylesheet' type='text/css'>
     <link rel='stylesheet' href='//cdn.jsdelivr.net/npm/font-kopub@1.0/kopubdotum.min.css'>
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}" />
-
+    <link rel="Stylesheet" href="{% static 'sidebar.css' %}">
 </head>
 
 <body>
@@ -44,7 +48,18 @@
 
     </header>
 
-
+    <br>
+    <section>
+        <div class="sidebar">
+    
+            <a href="{% url 'myinfo' %}"><i class="fa fa-fw fa-home"></i> my info</a>
+            <hr>
+            <a href="{% url 'mywriting' %}"><i class="fa fa-fw fa-wrench"></i> 내가 쓴 글</a>
+            <hr>
+            <a href="{% url 'mypartiform' %}"><i class="fa fa-fw fa-user"></i> 참여한 폼</a>
+            <hr>
+        </div>
+    </section>
 
 
 
