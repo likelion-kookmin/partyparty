@@ -8,5 +8,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.main, name = 'main'),
     path('goods/', include('goods.urls')),
-
+    
 ]
